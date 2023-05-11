@@ -247,14 +247,18 @@
   <satelliteTidalStripping value="zentner2005">
     <efficiency value="2.95"/>
   </satelliteTidalStripping>
-  <mergerRemnantSize value="cole2000"/>
 
+  <!-- Galaxy merger options -->
+  <!-- Charles Gannon 5.11.23 -->
+  <!-- This is no longer needed since we are modelling the orbits of the subhalos-->
+  <!--
   <satelliteMergingTimescales value="villalobos2013">
     <exponent value="0.471091687759621"/>
     <satelliteMergingTimescales value="jiang2008">
       <timescaleMultiplier value="0.313091080078393"/>
     </satelliteMergingTimescales>
   </satelliteMergingTimescales>
+  -->
   <mergerMassMovements value="simple">
     <destinationGasMinorMerger value="dominant"/>
     <destinationStarsMinorMerger value="dominant"/>
