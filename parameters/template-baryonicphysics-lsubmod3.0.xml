@@ -141,7 +141,7 @@
   <mergerTreeNodeMerger value="singleLevelHierarchy"/>
 
   <!-- Dark matter halo structure options -->
-  <!--Change this to heated?-->
+  <!--Charles Gannon: Change this to heated?-->
   <darkMatterProfileDMO value="NFW"/>
   <darkMatterProfileConcentration value="gao2008"/>
   <darkMatterProfileScaleRadius value="concentrationLimiter">
@@ -227,37 +227,12 @@
   <!-- Black hole options -->
   <blackHoleBinaryMerger value="rezzolla2008"/>
 
-  <!-- Galaxy merger options -->
-  <!--Charles Gannon 5.11.23-->
-  <!--Subhalo evolution merger-->
-  <!-- Satellite orbit options -->
-  <virialOrbit value="spinCorrelated">
-    <!-- Model subhalo orbits at virial radius crossing using a fit to a cosmological distribution, plus some correlation with the host halo spin vector -->
-    <!-- Best fit value for correlation with host spin from https://github.com/galacticusorg/galacticus/wiki/Constraints:-Halo-spins-and-concentrations. -->
-    <alpha value="0.155573112534425"/>
-    <virialOrbit value="jiang2014">
-      <!-- Use the Jiang et al. (2014; MNRAS; 448; 1674; https://ui.adsabs.harvard.edu/abs/2015MNRAS.448.1674J/abstract) model for -->
-      <!-- the distribution of orbital paramrters.                                                                                 -->
-      <!-- Best fit value from Benson, Behrens, & Lu (2020; MNRAS; 496; 3371; http://adsabs.harvard.edu/abs/2020MNRAS.496.3371B).  -->
-      <bRatioHigh value="+2.88333 +4.06371 +3.86726"/>
-      <bRatioIntermediate value="+1.05361 +1.56868 +2.89027"/>
-      <bRatioLow value="+0.07432 +0.54554 +1.04721"/>
-      <gammaRatioHigh value="+0.07124 +0.04737 -0.01913"/>
-      <gammaRatioIntermediate value="+0.10069 +0.07821 +0.04231"/>
-      <gammaRatioLow value="+0.10866 +0.11260 +0.11698"/>
-      <muRatioHigh value="+1.10168 +1.09639 +1.09819"/>
-      <muRatioIntermediate value="+1.18205 +1.19573 +1.24581"/>
-      <muRatioLow value="+1.22053 +1.22992 +1.25528"/>
-      <sigmaRatioHigh value="+0.09244 +0.14335 +0.21079"/>
-      <sigmaRatioIntermediate value="+0.07397 +0.09590 +0.10941"/>
-      <sigmaRatioLow value="+0.07458 +0.09040 +0.06981"/>
-    </virialOrbit>
-  </virialOrbit>
-  <satelliteOrbitStoreOrbitalParameters value="true"/>
-  <!--<virialOrbit value="li2020"/>-->
+  <!--Chagne this?-->
+  <virialOrbit value="li2020"/>
 
   <!-- Galaxy merger options -->
   <!-- Charles Gannon 5.11.23 -->
+  <!--Subhalo evolution merger -->
   <!-- Orbiting model of satellites -->
   <!-- Values taken from Yang et al. (2020; MNRAS; 498; 3902; http://adsabs.harvard.edu/abs/2020MNRAS.498.3902Y) approximately
        interpolated betweeing their gamma=0.0 and 2.5 cases (using the Caterpillar simulations as calibration target) to
@@ -272,7 +247,7 @@
   <satelliteTidalStripping value="zentner2005">
     <efficiency value="2.95"/>
   </satelliteTidalStripping>
-  <mergerRemnantSize value="null"/>
+  <mergerRemnantSize value="cole2000"/>
 
   <satelliteMergingTimescales value="villalobos2013">
     <exponent value="0.471091687759621"/>
@@ -329,6 +304,7 @@
     <nodeOperator value="darkMatterProfileScaleSet"/>
     <nodeOperator value="darkMatterProfileScaleInterpolate"/>
     <!-- Halo spins -->
+    <!-- Charles Gannon: Change this? -->
     <nodeOperator value="haloAngularMomentumRandomWalk">
       <angularMomentumVarianceSpecific value="0.001"/>
     </nodeOperator>
@@ -337,17 +313,28 @@
     <nodeOperator value="cosmicTime"/>
     <!-- DMO evolution -->
     <nodeOperator value="DMOInterpolate"/>
-    <!-- Satellite evolution -->
-    <nodeOperator value="satelliteMergingTime"/>
-    <nodeOperator value="satelliteMassLoss"/>
-    <!-- Set random number generator -->
     <!-- Charles Gannon 5.10.23 -->
     <!-- Subhalo evolution merger -->
     <!-- Apply all orbital physics to the evolution of subhalos. -->
     <nodeOperator value="satelliteOrbit"/>
-    <!-- Old node operator-->
+    <nodeOperator value="satelliteDynamicalFriction"/>
+    <nodeOperator value="satelliteTidalMassLoss"/>
+    <nodeOperator value="satelliteTidalHeating"/>
+    <nodeOperator value="satelliteMergingRadiusTrigger">
+      <!-- Subhalos will be removed if they reach 1% of the virial radius of their host halo. -->
+      <radiusVirialFraction value="0.01"/>
+    </nodeOperator>
+    <nodeOperator value="satelliteDestructionMassThreshold">
+      <!-- Subhalos will be removed if they fall below the merger tree mass resolution limit. -->
+      <massDestructionAbsolute value="=[mergerTreeMassResolution::massResolution]"/>
+      <massDestructionMassInfallFraction value="0.0"/>
+    </nodeOperator>
+    <!-- Pre-merge node operators-->
+    <!-- Satellite evolution -->
     <!-- Positions for subhalos -->
     <!--<nodeOperator value="positionTraceDarkMatter"/>-->
+    <!--<nodeOperator value="satelliteMergingTime"/>-->
+    <!--<nodeOperator value="satelliteMassLoss"/>-->
 
   </nodeOperator>
   
