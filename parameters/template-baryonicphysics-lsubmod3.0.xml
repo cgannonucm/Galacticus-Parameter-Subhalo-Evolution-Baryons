@@ -452,7 +452,13 @@
     </mergerTreeEvolveTimestep>
   </mergerTreeEvolveTimestep>
   <!-- Output options -->
-  <mergerTreeOutputter value="analyzer"/>
+  <!--Charles Gannon-->
+  <!--Subhalo evolution merger-->
+  <mergerTreeOutputter value="standard">
+    <outputReferences value="false"/>
+  </mergerTreeOutputter>
+  <!-- Old -->
+  <!--<mergerTreeOutputter value="analyzer"/>-->
 
   <!--Charles Gannon-->
   <!--Subhalo evolution merger-->
