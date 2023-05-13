@@ -102,15 +102,30 @@
     <redshiftBase value="0.5"/>
   </mergerTreeConstructor>
   <mergerTreeBuilder value="cole2000">
+    <!-- The Cole et al. (2000) merger tree building algorithm is used. The "interval stepping" optimization from Appendix A -->
+    <!-- of Benson, Ludlow, & Cole (2019, MNRAS, 485, 5010; https://ui.adsabs.harvard.edu/abs/2019MNRAS.485.5010B) is used   -->
+    <!-- to speed up tree building.                                                                                          -->
     <accretionLimit value="0.1"/>
     <mergeProbability value="0.1"/>
+    <!--Charles Gannon-->
+    <!--Subhalo evolution merger-->
+    <!--Aditional options imported from lsubmod file-->
+    <redshiftMaximum value="30"/>
+    <branchIntervalStep value="true"/>
   </mergerTreeBuilder>
+  
   <mergerTreeBranchingProbability value="PCHPlus">
     <G0 value="1.14254683789855"/>
     <gamma1 value="-0.327359703026759"/>
     <gamma2 value="0.0587448775510245"/>
     <gamma3 value="0.645617093475741"/>
+    <!--Charles Gannon 5.11.23-->
+    <!--Subhalo evolution merger-->
+    <!--Aditional options imported from lsubmod file-->
+    <accuracyFirstOrder value="+0.1000000000000000"/>
+    <cdmAssumptions value="true"/>
   </mergerTreeBranchingProbability>
+  
   <!--Charles Gannon 5.11.23-->
   <!--Subhalo evolution merger-->
   <mergerTreeBuildMasses value="fixedMass">
@@ -389,9 +404,9 @@
     <!-- Pre-merge node operators-->
     <!-- Satellite evolution -->
     <!-- Positions for subhalos -->
-    <!--<nodeOperator value="positionTraceDarkMatter"/>-->
-    <!--<nodeOperator value="satelliteMergingTime"/>-->
-    <!--<nodeOperator value="satelliteMassLoss"/>-->
+    <!-- <nodeOperator value="positionTraceDarkMatter"/> -->
+    <!-- <nodeOperator value="satelliteMergingTime"/> -->
+    <!-- <nodeOperator value="satelliteMassLoss"/> -->
 
   </nodeOperator>
   
