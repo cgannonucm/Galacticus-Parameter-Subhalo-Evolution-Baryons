@@ -6,7 +6,7 @@
 <!-- V2.3 adds various node property extractors, a node operator and a parameter for backing up files-->
 <!-- V2.4 adds pre-output, control over type of multithreading-->
 <!-- V2.7 should fully fix all issues with central galaxy (turned merger remenants on) along with the v2.6 changes which turned galaxystructuresolver on-->
-<!--		Aditionally, V2.7 swiches to specifying radius instead of angular momentum for model of central galaxy-->
+<!-- Aditionally, V2.7 swiches to specifying radius instead of angular momentum for model of central galaxy-->
 <!-- Parameters to compute halo mass functions and subhalo evolution for CDM -->
 <!-- A central galaxy is simulated in the center of the main host halo, along with adiabatic contraction of dark matter profile of central galaxy, -->
 <!--	structure solver is turned on-->
