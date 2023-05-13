@@ -111,7 +111,7 @@
     <!--Subhalo evolution merger-->
     <!--Aditional options imported from lsubmod file-->
     <redshiftMaximum value="30"/>
-    <branchIntervalStep value="true"/>
+    <branchIntervalStep value="true"/`>
   </mergerTreeBuilder>
   
   <mergerTreeBranchingProbability value="PCHPlus">
@@ -232,9 +232,23 @@
   </coolingTimeAvailable>
   <!-- Hot halo ram pressure stripping options -->
   <hotHaloRamPressureStripping value="virialRadius"/>
+  <!--Charles Gannon 5.12.23-->
+  <!--Subhalo evolution merger-->
   <!-- Galactic structure options -->
-  <galacticStructureSolver value="simple"/>
-  <darkMatterProfile value="darkMatterOnly"/>
+  <galacticStructureSolver value="equilibrium">
+    <includeBaryonGravity value="true"/>
+    <useFormationHalo value="false"/>
+    <solveForInactiveProperties value="true"/>
+    <solutionTolerance value="0.01"/>
+  </galacticStructureSolver>
+  <!--Include baryonic contraction-->
+  <darkMatterProfile value="adiabaticGnedin2004">
+   <A value="0.73"/>
+   <omega value="0.7"/>
+  </darkMatterProfile>
+  <!--Old options-->
+  <!--  <darkMatterProfile value="darkMatterOnly"/> -->
+  <!--  <galacticStructureSolver value="simple"/> -->
   <!-- Star formation rate options -->
   <starFormationRateDisks value="timescale">
     <starFormationTimescale value="dynamicalTime">
