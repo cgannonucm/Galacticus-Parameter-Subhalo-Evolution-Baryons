@@ -57,7 +57,13 @@
       <dimensionless value="true"/>
     </massDistributionSpheroid>
   </componentSpheroid>
-  <componentSpin value="scalar"/>
+  <!--Charles Gannon-->
+  <!--Subhalo evolution merger-->
+  <!--Added redshift base parameter -->
+  <!--Changed to vector to match DMO file-->
+  <componentSpin value="vector"/>
+  <!--premerge-->
+  <!--<componentSpin value="scalar"/>-->
 
   <!-- Cosmological parameters and options -->
   <cosmologyFunctions value="matterLambda"/>
@@ -143,6 +149,7 @@
     <!-- All trees are set to have the same halo mass resolution. -->
     <massResolution value="1.0e+8"/>
   </mergerTreeMassResolution>
+  <!--preemerge-->
   <!--
   <mergerTreeBuildMassDistribution value="powerLaw"/>
   <mergerTreeBuildMasses value="sampledDistributionUniform">
@@ -157,8 +164,13 @@
   -->
 
   <!-- Substructure hierarchy options -->
-  <!-- Charles Gannon: Change this to multilevel heirarchy?-->
-  <mergerTreeNodeMerger value="singleLevelHierarchy"/>
+  <!--Charles Gannon 5.11.23-->
+  <!--Subhalo evolution merger-->
+  <!--Changed to allow tracking of sub-subhalos-->
+  <mergerTreeNodeMerger value="multiLevelHierarchy"/>
+  <!--Premerge-->
+  <!--<mergerTreeNodeMerger value="singleLevelHierarchy"/>-->
+
 
   <!-- Dark matter halo structure options -->
   <!--Charles Gannon 5.12.23-->
@@ -193,8 +205,16 @@
 
   <!-- Dark matter halo spin options -->
   <haloSpinDistribution value="bett2007">
+    <!-- Dark matter halo structure options -->
+    <!--Charles Gannon 5.12.23-->
+    <!--Subhalo evolution merger-->
+    <alpha value="1.7091800"/>
+    <lambda0 value="0.0420190"/>
+    <!--premerge-->
+    <!--
     <alpha value="2.509"/>
     <lambda0 value="0.04326"/>
+    -->
   </haloSpinDistribution>
 
   <!-- Halo accretion options -->
@@ -390,10 +410,18 @@
     <nodeOperator value="darkMatterProfileScaleSet"/>
     <nodeOperator value="darkMatterProfileScaleInterpolate"/>
     <!-- Halo spins -->
-    <!-- Charles Gannon: Change this? -->
+    <!-- Charles Gannon 5.14.23 -->
+    <!-- Subhalo evolution merger -->
+    <!-- Changed to match DMO file-->
+    <nodeOperator value="haloAngularMomentumVitvitska2002">
+      <exponentMass value="0.92527794238468"/>
+    </nodeOperator>
+    <!--Premerge-->
+    <!--
     <nodeOperator value="haloAngularMomentumRandomWalk">
       <angularMomentumVarianceSpecific value="0.001"/>
     </nodeOperator>
+    -->
     <nodeOperator value="haloAngularMomentumInterpolate"/>
     <!-- Cosmological epoch -->
     <nodeOperator value="cosmicTime"/>
