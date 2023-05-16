@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Galacticus model constrained to match baryonic physics data                        -->
-<!-- See https://github.com/galacticusorg/galacticus/wiki/Constraints:-Baryonic-Physics -->
-<!-- 30-November-2020                                                                   -->
 <parameters>
+  <!-- Galacticus model constrained to match baryonic physics data                        -->
+  <!-- See https://github.com/galacticusorg/galacticus/wiki/Constraints:-Baryonic-Physics -->
+  <!-- 30-November-2020 -->
+  <!-- Modified by Charles Gannon 5.13.2023, to include improved models of subhalo orbital physics-->
   <formatVersion>2</formatVersion>
   <version>0.9.4</version>
 
