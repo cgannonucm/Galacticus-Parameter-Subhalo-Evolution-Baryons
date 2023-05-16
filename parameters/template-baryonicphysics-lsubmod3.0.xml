@@ -483,6 +483,7 @@
       <timeOffsetMaximumRelative value="0.001"/>
     </mergerTreeEvolveTimestep>
   </mergerTreeEvolveTimestep>
+  
   <!-- Output options -->
   <!--Charles Gannon-->
   <!--Subhalo evolution merger-->
@@ -491,6 +492,33 @@
   </mergerTreeOutputter>
   <!-- Old -->
   <!--<mergerTreeOutputter value="analyzer"/>-->
+
+  <!-- Output options -->
+  <!--Charles Gannon-->
+  <!-- Output properties -->
+  <nodePropertyExtractor value="multi">
+    <!-- Orbital position relative to the main host halo -->
+    <nodePropertyExtractor value="positionOrbital"/>
+    <!--Added code to get data on nodes and extra redshift data-->
+    <nodePropertyExtractor value="nodeIndices"/>
+    <nodePropertyExtractor value="indicesTree"/>
+    <nodePropertyExtractor value="massBound"/>
+    
+    <nodePropertyExtractor value="redshiftLastIsolated"/>
+    <!--Density profile extractor-->
+    <nodePropertyExtractor value="darkMatterProfileScaleRadius"/>
+    <!--Viral properties extractor-->
+    <nodePropertyExtractor value="virialProperties"/>
+    <!--Some new properties-->
+    <nodePropertyExtractor value="hierarchy"/>
+
+    <!--Density profile-->
+    <nodePropertyExtractor value="densityProfile">
+      <includeRadii value="true"/>
+      <radiusSpecifiers value="                                virialRadius:all:all:radial:0.01000000                                virialRadius:all:all:radial:0.01274275                                virialRadius:all:all:radial:0.01623777                                virialRadius:all:all:radial:0.02069138                                virialRadius:all:all:radial:0.02636651                                virialRadius:all:all:radial:0.03359818                                virialRadius:all:all:radial:0.04281332                                virialRadius:all:all:radial:0.05455595                                virialRadius:all:all:radial:0.06951928                                virialRadius:all:all:radial:0.08858668                                virialRadius:all:all:radial:0.11288379                                virialRadius:all:all:radial:0.14384499                                virialRadius:all:all:radial:0.18329807                                virialRadius:all:all:radial:0.23357215                                virialRadius:all:all:radial:0.29763514                                virialRadius:all:all:radial:0.37926902                                virialRadius:all:all:radial:0.48329302                                virialRadius:all:all:radial:0.61584821                                virialRadius:all:all:radial:0.78475997                                virialRadius:all:all:radial:1.00000000                               "/>
+    </nodePropertyExtractor>  
+
+  </nodePropertyExtractor>
 
   <!--Charles Gannon-->
   <!--Subhalo evolution merger-->
