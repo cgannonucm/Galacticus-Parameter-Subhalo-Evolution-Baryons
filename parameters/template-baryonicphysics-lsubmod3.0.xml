@@ -3,7 +3,7 @@
   <!-- Galacticus model constrained to match baryonic physics data                        -->
   <!-- See https://github.com/galacticusorg/galacticus/wiki/Constraints:-Baryonic-Physics -->
   <!-- 30-November-2020 -->
-  <!-- Modified by Charles Gannon 5.13.2023, to include improved models of subhalo orbital physics-->
+  <!-- Modified by Charles Gannon 5.13.2023, to include improved models of subhalo orbital physics -->
   <formatVersion>2</formatVersion>
   <version>0.9.4</version>
 
@@ -118,7 +118,7 @@
     <!--Subhalo evolution merger-->
     <!--Aditional options imported from lsubmod file-->
     <redshiftMaximum value="30"/>
-    <branchIntervalStep value="true"/`>
+    <branchIntervalStep value="true" />
   </mergerTreeBuilder>
   
   <mergerTreeBranchingProbability value="PCHPlus">
