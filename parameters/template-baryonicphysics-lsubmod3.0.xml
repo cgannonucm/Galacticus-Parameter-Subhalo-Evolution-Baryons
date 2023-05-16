@@ -14,6 +14,9 @@
     <seed value="248"/>
   </randomNumberGenerator>
 
+  <!--Use all cores to evolve single tree-->
+  <treeEvolveSingleForest value="False"/>
+
   <!-- Task and work control -->
   <task value="evolveForests">
     <walltimeMaximum value="7200"/>
