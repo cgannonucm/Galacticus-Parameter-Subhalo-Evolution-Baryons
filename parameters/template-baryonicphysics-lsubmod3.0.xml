@@ -503,4 +503,7 @@
   <!-- Output file -->
   <outputFileName value="baryonicPhysicsConstrained.hdf5"/>
 
+  <!--Backup files here-->
+  <stateFileRoot value="/home/cgannon/scratch/untitled-stateout"/>
+
 </parameters>
