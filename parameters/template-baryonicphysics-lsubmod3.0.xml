@@ -19,7 +19,10 @@
 
   <!-- Task and work control -->
   <task value="evolveForests">
-    <walltimeMaximum value="7200"/>
+    <!-- Charles Gannon 5.11.23 -->
+    <!-- Subhalo evolution merger -->
+    <!-- Removed maximum walltime-->
+    <!-- <walltimeMaximum value="7200"/> -->
   </task>
   <evolveForestsWorkShare value="cyclic"/>
 
