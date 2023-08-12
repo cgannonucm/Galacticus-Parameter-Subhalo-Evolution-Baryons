@@ -450,6 +450,8 @@
       <massDestructionAbsolute value="=[mergerTreeMassResolution::massResolution]"/>
       <massDestructionMassInfallFraction value="0.0"/>
     </nodeOperator>
+    <!--Charles Gannon 8.21.2023-->
+    <nodeOperator value="hierarchy"/>
     <!-- Pre-merge node operators-->
     <!-- Satellite evolution -->
     <!-- Positions for subhalos -->
@@ -485,6 +487,24 @@
       <timeOffsetMaximumAbsolute value="0.010"/>
       <timeOffsetMaximumRelative value="0.001"/>
     </mergerTreeEvolveTimestep>
+    <!-- Charles Gannon -->
+    <!-- Addeded "satelliteDestruction" mergerTreeEvolveTimestep -->
+    <!-- Subhalo evolution merger -->
+    <!-- This fixes infinite loop issue-->
+    <mergerTreeEvolveTimestep value="satelliteDestruction"/>
+    <!-- Charles Gannon -->
+    <!-- 7.1.2023-->
+    <!-- Addeded "hostTidalMassLoss" mergerTreeEvolveTimestep -->
+    <!-- Subhalo evolution merger -->
+    <!-- This fixes infinite loop issue -->
+    <!-- Is this appropriate? -->
+    <mergerTreeEvolveTimestep value="hostTidalMassLoss">
+      <!-- This timestep criterion makes sure that subsubahlos do not evolve too far ahead of their host subhalos when
+           the host density and mass change rapidily due to tidal effects. It also limits the evolution time of subhalos
+           to the time at which the hosts first becomes subhalos. -->
+      <timeStepRelative value="0.1"/>
+    </mergerTreeEvolveTimestep>
+  
   </mergerTreeEvolveTimestep>
   
   <!-- Output options -->
